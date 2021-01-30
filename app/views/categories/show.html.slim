@@ -1,0 +1,8 @@
+h1
+  = @category.name
+
+ul
+  li
+    = link_to "Edit", edit_category_path(@category)
+  li
+    = link_to "Destroy", category_path(@category), method: :delete, data: { confirm: "Are you sure?" }
