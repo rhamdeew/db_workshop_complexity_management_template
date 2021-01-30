@@ -1,19 +1,20 @@
-h1
-  = @article.title
-p
-  = @article.body
-p Category:
-p
-  = @article.category.name
+section.text-gray-600.body-font
+  .container.px-5.py-24.mx-auto.flex.flex-col
+    .md:w-1/2.md:pr-12.md:py-8.mb-10.md:mb-0.pb-10
+      h1.font-medium.title-font.mt-4.text-gray-900.text-5xl
+        = @article.title
+      h2.font-medium.title-font.mt-4.text-gray-500.text-xl.italic
+        = @article.category.name
+      p.leading-relaxed.text-lg.mb-4
+        = @article.body
+      p.mb-5
+        = link_to "Edit", edit_article_path(@article), class: 'text-indigo-500 inline-flex items-center mr-8'
+        = link_to "Destroy", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: 'text-indigo-500 inline-flex items-center mr-8'
+      hr
 
-ul
-  li
-    = link_to "Edit", edit_article_path(@article)
-  li
-    = link_to "Destroy", article_path(@article), method: :delete, data: { confirm: "Are you sure?" }
+      h3.font-medium.title-font.mt-4.text-gray-500.text-xl Comments:
+      = render @article.comments
+      hr
 
-h2 Comments
-= render @article.comments
-
-h2 Add a comment:
-= render 'comments/form'
+      h3.font-medium.title-font.mt-4.text-gray-500.text-xl Add a comment:
+      = render 'comments/form'

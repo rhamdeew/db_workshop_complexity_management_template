@@ -1,8 +1,9 @@
-p
-  strong Commenter:
-  = comment.commenter
-p
-  strong Comment:
-  = comment.body
-p
-  = link_to 'Destroy Comment', [comment.article, comment], method: :delete, data: { confirm: "Are you sure?" }
+section.my-5
+  p
+    span.text-xs.text-gray-400.tracking-widest.font-medium.title-font.mb-1 Commenter:
+    = comment.commenter
+  p
+    span.text-xs.text-gray-400.tracking-widest.font-medium.title-font.mb-1 Comment:
+    = comment.body
+  p
+    = link_to 'Destroy Comment', [comment.article, comment], method: :delete, data: { confirm: "Are you sure?" }, class: 'text-indigo-500 text-xs inline-flex items-center mr-8'

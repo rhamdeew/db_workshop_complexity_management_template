@@ -1,5 +1,7 @@
-= simple_form_for article do |f|
- = f.input :title
- = f.input :body
- = f.association :category
- = f.submit
+.container.px-5.py-10.mx-auto.flex
+  = simple_form_for article do |f|
+    = f.input :title, input_html: { class: 'w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out' }, wrapper_html: { class: 'mb-5' }
+    = f.input :body, input_html: { class: 'w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out' }, wrapper_html: { class: 'mb-5' }
+    = f.association :category, input_html: { class: 'rounded border border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base pl-3 pr-10' }, label_html: { class: 'mr-3' }, wrapper_html: { class: 'mb-5' }
+    = f.button :submit, class: 'flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded'
+
