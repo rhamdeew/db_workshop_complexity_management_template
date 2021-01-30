@@ -1,8 +1,8 @@
-h1
-  = @category.name
-
-ul
-  li
-    = link_to "Edit", edit_category_path(@category)
-  li
-    = link_to "Destroy", category_path(@category), method: :delete, data: { confirm: "Are you sure?" }
+section.text-gray-600.body-font
+  .container.px-5.py-24.mx-auto.flex.flex-col
+    .md:w-1/2.md:pr-12.md:py-8.mb-10.md:mb-0.pb-10
+      h1.font-medium.title-font.mt-4.text-gray-900.text-5xl
+        = @category.name
+      p.mb-5
+        = link_to "Edit", edit_category_path(@category), class: 'text-indigo-500 inline-flex items-center mr-8'
+        = link_to "Destroy", category_path(@category), method: :delete, data: { confirm: "Are you sure?" },  class: 'text-indigo-500 inline-flex items-center mr-8'

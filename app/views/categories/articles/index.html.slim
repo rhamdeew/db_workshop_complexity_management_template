@@ -1,0 +1,15 @@
+h1.font-medium.title-font.mt-4.text-gray-900.text-5xl Articles
+
+table.table-auto.my-5
+  thead
+    tr
+      th Title
+  tbody
+    - @articles.each do |article|
+      tr
+        th
+          = link_to article.title, category_article_path(category_id: article.category.id, id: article.id)
+
+br
+
+= link_to "New Article", new_category_article_path, class: 'text-indigo-500 inline-flex items-center mr-8'
